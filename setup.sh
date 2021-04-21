@@ -8,9 +8,9 @@ brew update
 # oh-my-zsh
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-# python3
+# pyenv
 brew install pyenv
-# update python version if necessary
+# python3 (update version if necessary)
 pyenv install 3.9.0
 pyenv global 3.9.0
 pyenv version
@@ -18,10 +18,19 @@ echo -e 'if command -v pyenv 1>/dev/null 2>&1; then\n  eval "$(pyenv init -)"\nf
 
 # git and github cli
 git config --gobal user.name nsbuitrago
-git config --global user.email nsbuitrago@icloud.com
+git config --global user.email mail@nsbuitrago.com
 brew install gh
 gh auth login
 
-# intsall vim plug
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
- https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+# apps
+brew install --cask iterm2
+brew install --cask 1password
+brew install --cask firefox
+brew install --cask obsidian
+brew install --cask visual-studio-code
+brew install --cask raycast
+brew install --cask notion
+brew install --cask mendeley
+brew install --cask zoom
+brew install --cask nordvpn
+
