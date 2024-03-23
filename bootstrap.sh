@@ -2,7 +2,6 @@ xcode-select --install
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 brew update
-
 brew install neovim
 brew install ripgrep
 brew install fzf
@@ -20,6 +19,7 @@ brew install tailscale
 brew install pymol
 brew install fastfetch
 brew install htop
+brew install stow
 
 pyenv install 3.10.0
 pyenv global 3.10.0
@@ -28,6 +28,7 @@ pyenv version
 git config --gobal user.name nsbuitrago
 git config --global user.email mail@nsbuitrago.com
 gh auth login
+gh extension install github/gh-copilot
 
 brew install --cask arc
 brew install --cask wezterm
