@@ -12,12 +12,12 @@ wo.number = true
 o.relativenumber = true
 
 -- Enable mouse mode
-o.mouse = 'a'
+o.mouse = "a"
 
 -- Sync clipboard between OS and Neovim
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-o.clipboard = 'unnamedplus'
+o.clipboard = "unnamedplus"
 
 -- Enable break indent
 o.breakindent = true
@@ -30,17 +30,26 @@ o.ignorecase = true
 o.smartcase = true
 
 -- Keep signcolumn on by default
-wo.signcolumn = 'yes'
+wo.signcolumn = "yes"
 
 -- Use color column
-o.colorcolumn = '80'
+o.colorcolumn = "80"
 
 -- Decrease update time
 o.updatetime = 250
 o.timeoutlen = 300
 
 -- Set completeopt to have a better completion experience
-o.completeopt = 'menuone,noselect'
+o.completeopt = "menuone,noselect"
+
+-- Preview substitutions live, as you type!
+o.inccommand = "split"
+
+-- Show which line your cursor is on
+o.cursorline = true
+
+-- Minimal number of screen lines to keep above and below the cursor.
+o.scrolloff = 10
 
 -- NOTE: You should make sure your terminal supports this
 o.termguicolors = true

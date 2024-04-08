@@ -19,7 +19,7 @@ require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	"github/copilot.vim", -- AI assisted code completion
 	{ "echasnovski/mini.pairs", version = "*", opts = {} }, -- auto brackets
-	{ "numToStr/Comment.nvim", opts = {} }, -- comment out lines
+	-- { "numToStr/Comment.nvim", opts = {} }, -- comment out lines (can remove this since it is on by default in new neovim versions)
 	"christoomey/vim-tmux-navigator", -- navigate between vim and tmux
 	require("plugins.config.lsp"), -- Language server protocol support
 	require("plugins.config.cmp"), -- Autocompletion
