@@ -73,6 +73,7 @@ export LD_LIBRARY_PATH="/Users/nsbuitrago/.pyenv/versions/3.10.0/lib/libpython3.
 
 export MODULAR_HOME="/Users/nsbuitrago/.modular"
 export PATH="/Users/nsbuitrago/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
+export HELIX_RUNTIME=/opt/homebrew/Cellar/helix/24.03/libexec/runtime
 
 # Nix
 if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then

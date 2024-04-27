@@ -3,6 +3,5 @@
 	email = 44626938+nsbuitrago@users.noreply.github.com
 [init]
 	defaultBranch = main
-
-[gitbutler]
-	aiModelProvider = anthropic
+[pull]
+	rebase = false
