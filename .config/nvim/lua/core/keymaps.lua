@@ -3,17 +3,13 @@
 -- ]]
 --
 local set = vim.keymap.set
-local g = vim.g
-
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-g.mapleader = " "
-g.maplocalleader = " "
 
 -- Keymaps for better default experience
 -- See `:help vim.keymap.set()`
 set({ "n", "v" }, "<Space>", "<Nop>", { silent = true })
+
+-- Set highlight on search, but clear on pressing <Esc> in normal mode
+set("n", "<Esc>", ":nohlsearch<CR>")
 
 -- movement
 set({ "n", "v" }, "gs", "^", { desc = "Go to the first non-blank character of the line" })
@@ -45,6 +41,9 @@ set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list
 
 -- Netrw keymaps
 set("n", "<leader>fe", ":Explore<CR>", { desc = "Open Netrw" })
+
+-- better escape
+set("i", "kj", "<Esc>", { desc = "jk to <Esc>" })
 
 -- [[ Highlight on yank ]]
 -- See `:help vim.highlight.on_yank()`

@@ -1,8 +1,16 @@
 -- [[ Setting options ]]
 -- See `:help vim.o`
 -- NOTE: You can change these options as you wish!
+
 local o = vim.o
 local wo = vim.wo
+local g = vim.g
+
+-- Set <space> as the leader key
+-- See `:help mapleader`
+--  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
+g.mapleader = " "
+g.maplocalleader = " "
 
 -- Set highlight on search
 o.hlsearch = false
@@ -54,4 +62,5 @@ o.scrolloff = 10
 -- NOTE: You should make sure your terminal supports this
 o.termguicolors = true
 
+-- never show mode since it will be in the status line
 o.showmode = false

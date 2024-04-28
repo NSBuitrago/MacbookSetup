@@ -18,19 +18,18 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	"tpope/vim-sleuth", -- Detect tabstop and shiftwidth automatically
 	"github/copilot.vim", -- AI assisted code completion
+	require("plugins.config.mini"), -- mini plugins
 	{ "echasnovski/mini.pairs", version = "*", opts = {} }, -- auto brackets
-	-- { "numToStr/Comment.nvim", opts = {} }, -- comment out lines (can remove this since it is on by default in new neovim versions)
 	"christoomey/vim-tmux-navigator", -- navigate between vim and tmux
 	require("plugins.config.lsp"), -- Language server protocol support
+	require("plugins.config.dap"), -- Debug adapter protocol support
 	require("plugins.config.cmp"), -- Autocompletion
 	require("plugins.config.git"), -- git signs
 	require("plugins.config.colors"), -- colorscheme
-	require("plugins.config.lualine"), -- status line
 	require("plugins.config.blankline"), -- indentation guides
 	require("plugins.config.telescope"), -- fuzzy finder
 	require("plugins.config.treesitter"), -- syntax highlighting
 	require("plugins.config.dap"), -- debugging
 	require("plugins.config.markdownpreview"), -- markdown preview
-	require("plugins.config.surround"), -- surround text with brackets
 	require("plugins.config.conform"), -- autoformatting
 }, {})
