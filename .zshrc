@@ -17,7 +17,7 @@ alias tksa="tmux kill-server"
 alias dotfiles='/usr/bin/git --git-dir=/Users/nsbuitrago/Developer/dotfiles/ --work-tree=/Users/nsbuitrago'
 alias activate='source .venv/bin/activate'
 alias ff="fastfetch"
-alias ls="exa --icons"
+# alias ls="exa --icons"
 alias rj="ssh -L 8888:localhost:8888"
 alias f="fzf"
 alias mm2="nix-shell -p minimap2"
@@ -30,7 +30,6 @@ cf() {
   local dir
   dir=$(find . -type d 2> /dev/null | fzf) && cd "$dir"
 }
-
 
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
@@ -81,4 +80,4 @@ if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
 fi
 # End Nix
 
-eval "$(gh copilot alias -- zsh)"
+# eval "$(gh copilot alias -- zsh)"
