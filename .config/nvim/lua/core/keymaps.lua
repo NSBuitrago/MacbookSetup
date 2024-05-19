@@ -40,7 +40,7 @@ set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnos
 set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Netrw keymaps
-set("n", "<leader>fe", ":Explore<CR>", { desc = "Open Netrw" })
+set("n", "<leader>fe", ":Oil<CR>", { desc = "Open Oil" })
 
 -- better escape
 set("i", "kj", "<Esc>", { desc = "jk to <Esc>" })

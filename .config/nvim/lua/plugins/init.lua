@@ -32,4 +32,5 @@ require("lazy").setup({
 	require("plugins.config.dap"), -- debugging
 	require("plugins.config.markdownpreview"), -- markdown preview
 	require("plugins.config.conform"), -- autoformatting
+	require("plugins.config.oil"), -- file explorer
 }, {})
