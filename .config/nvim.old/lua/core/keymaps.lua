@@ -20,8 +20,8 @@ set("n", "k", "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
 set("n", "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- buffer movement
-set("n", "<leader><Tab>", ":bnext<CR>", { desc = "Move to next [B]uffer" })
-set("n", "<leader><S-Tab>", ":bprev<CR>", { desc = "Move to previous [B]uffer" })
+set("n", "<leader>bn", ":bnext<CR>", { desc = "Move to next [B]uffer" })
+set("n", "<leader>bp", ":bprev<CR>", { desc = "Move to previous [B]uffer" })
 set("n", "<leader>bd", ":bdelete<CR>", { desc = "Close [B]uffer" })
 
 -- window movement
@@ -40,7 +40,6 @@ set("n", "<leader>e", vim.diagnostic.open_float, { desc = "Open floating diagnos
 set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostics list" })
 
 -- Netrw keymaps
-set("n", "<leader>fe", ":Oil<CR>", { desc = "Open Oil" })
 
 -- better escape
 set("i", "kj", "<Esc>", { desc = "jk to <Esc>" })

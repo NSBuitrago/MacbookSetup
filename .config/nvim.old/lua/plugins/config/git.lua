@@ -1,6 +1,7 @@
 --[[ Configure git related plugins ]]
 return {
   'lewis6991/gitsigns.nvim',
+  event = "BufReadPost",
   config = function()
     -- See `:help gitsigns.txt`
     require('gitsigns').setup({

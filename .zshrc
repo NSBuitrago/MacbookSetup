@@ -82,3 +82,11 @@ fi
 # End Nix
 
 eval "$(gh copilot alias -- zsh)"
+
+# pnpm
+export PNPM_HOME="/Users/nsbuitrago/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
