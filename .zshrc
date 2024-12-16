@@ -3,45 +3,33 @@ bindkey -v
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+eval "$(direnv hook zsh)"
 
 # aliases
 alias v="nvim"
 alias vi="nvim"
 alias vim="nvim"
-alias tls="tmux ls"
-alias ta="tmux attach -t"
-alias tn="tmux new -s"
-alias td="tmux detach"
-alias tks="tmux kill-session -t"
-alias tksa="tmux kill-server"
 alias dotfiles='/usr/bin/git --git-dir=/Users/nsbuitrago/Developer/dotfiles/ --work-tree=/Users/nsbuitrago'
 alias activate='source .venv/bin/activate'
 alias ff="fastfetch"
-alias ls="exa --icons"
-alias rj="ssh -L 8888:localhost:8888"
+alias ls="eza --icons"
 alias f="fzf"
-alias mm2="nix-shell -p minimap2"
 alias vf='nvim "$(fzf)"'
 alias ll="ls -l"
 alias lg="lazygit"
 alias gs="git status"
+alias gc="git commit"
+alias gp="git push"
 
 cf() {
   local dir
   dir=$(find . -type d 2> /dev/null | fzf) && cd "$dir"
 }
 
-
 # pyenv
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init -)"
 fi
-
-# yarn
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
-# flutter
-export PATH="$HOME/Developer/flutter/bin:$PATH"
 
 # go
 export GOPATH=$HOME/go
@@ -73,20 +61,9 @@ export LD_LIBRARY_PATH="/Users/nsbuitrago/.pyenv/versions/3.10.0/lib/libpython3.
 
 export MODULAR_HOME="/Users/nsbuitrago/.modular"
 export PATH="/Users/nsbuitrago/.modular/pkg/packages.modular.com_mojo/bin:$PATH"
-export HELIX_RUNTIME=/opt/homebrew/Cellar/helix/24.03/libexec/runtime
-
-# Nix
-if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
-  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
-fi
-# End Nix
 
 eval "$(gh copilot alias -- zsh)"
 
-# pnpm
-export PNPM_HOME="/Users/nsbuitrago/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
+# java
+export JAVA_HOME="/opt/homebrew/Cellar/openjdk/23/libexec/openjdk.jdk/Contents/Home"
+export PATH="$JAVA_PATH/bin:$PATH"

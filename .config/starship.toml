@@ -14,7 +14,7 @@ $character"""
 palette = "gruvbox_dark"
 
 [directory]
-style = "bright-black"
+style = "color_green"
 
 [character]
 success_symbol = "[❯](color_yellow)"
@@ -46,11 +46,11 @@ style = "yellow"
 
 [python]
 format = "[$virtualenv]($style) "
-style = "green"
+style = "color_yellow"
 
 [rust]
 symbol = ""
-style = "green"
+style = "color_yellow"
 format = '[$symbol( $version) ]($style)'
 
 [palettes.gruvbox_dark]
