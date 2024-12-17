@@ -1,4 +1,3 @@
-# You can use it to add commands that run after login to macOS user session.
 # 'start-at-login' needs to be 'true' for 'after-login-command' to work
 # Available commands: https://nikitabobko.github.io/AeroSpace/commands.html
 after-login-command = []
@@ -41,11 +40,6 @@ gaps.outer.left =       10
 gaps.outer.bottom =     10
 gaps.outer.top =        10
 gaps.outer.right =      10
-
-# Visual indent makes it easier to understand that containers of the same orientation are nested.
-# If you have 'enable-normalization-opposite-orientation-for-nested-containers' enabled then
-# there is no way to observe the indent
-indent-for-nested-containers-with-the-same-orientation = 30
 
 # 'main' binding mode declaration
 # See: https://nikitabobko.github.io/AeroSpace/guide.html#binding-modes
