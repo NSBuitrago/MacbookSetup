@@ -1,75 +1,53 @@
 local wezterm = require("wezterm")
-local smart_splits = wezterm.plugin.require("https://github.com/mrjones2014/smart-splits.nvim")
 
-local keymap = function(mods, key, action)
+local map_tmux_key = function(mods, key, action)
 	return {
 		mods = mods,
 		key = key,
-		action = action,
+		action = wezterm.action.Multiple({
+			wezterm.action.SendKey({ mods = "CTRL", key = "b" }),
+			wezterm.action.SendKey({ key = action }),
+		}),
 	}
 end
 
-local config = {
+return {
 	font = wezterm.font("JetBrains Mono"),
 	font_size = 16,
 	color_scheme = "Gruvbox Material (Gogh)",
 	colors = {
 		background = "#1D2021", -- use same background as nvim theme
-		tab_bar = {
-			active_tab = {
-				bg_color = "#1D2021",
-				fg_color = "#e1a345",
-			},
-		},
 	},
-	enable_tab_bar = true,
-	tab_bar_at_bottom = true,
-	use_fancy_tab_bar = false,
+	enable_tab_bar = false,
 	window_decorations = "RESIZE",
 	adjust_window_size_when_changing_font_size = false,
 	audible_bell = "Disabled",
 	window_close_confirmation = "NeverPrompt",
-	keys = {
-		keymap("CMD", "s", wezterm.action.SplitVertical),
-		keymap("CMD", "S", wezterm.action.SplitHorizontal),
-		keymap("CMD", "w", wezterm.action.CloseCurrentPane({ confirm = true })),
-		{
-			key = "R",
-			mods = "CMD|SHIFT",
-			action = wezterm.action.PromptInputLine({
-				description = "Enter new name for tab",
-				action = wezterm.action_callback(function(window, pane, line)
-					-- line will be `nil` if they hit escape without entering anything
-					-- An empty string if they just hit enter
-					-- Or the actual line of text they wrote
-					if line then
-						window:active_tab():set_title(line)
-					end
-				end),
-			}),
-		},
-	},
 	max_fps = 120,
-}
-
-smart_splits.apply_to_config(config, {
-	-- the default config is here, if you'd like to use the default keys,
-	-- you can omit this configuration table parameter and just use
-	-- smart_splits.apply_to_config(config)
-
-	-- directional keys to use in order of: left, down, up, right
-	direction_keys = { "h", "j", "k", "l" },
-	-- if you want to use separate direction keys for move vs. resize, you
-	-- can also do this:
-	-- direction_keys = {
-	-- 	move = { "h", "j", "k", "l" },
-	-- 	resize = { "LeftArrow", "DownArrow", "UpArrow", "RightArrow" },
-	-- },
-	-- modifier keys to combine with direction_keys
-	modifiers = {
-		move = "CTRL", -- modifier to use for pane movement, e.g. CTRL+h to move left
+	keys = {
+		-- tmux bindings
+		map_tmux_key("CMD", "t", "c"), -- create new window
+		map_tmux_key("CTRL", "Tab", "n"), -- move to next window
+		map_tmux_key("CTRL|SHIFT", "Tab", "p"), -- move to previous window
+		map_tmux_key("CMD", "s", '"'), -- create horizontal split
+		map_tmux_key("CMD|SHIFT", "s", "%"), -- create vertical split
+		map_tmux_key("CMD|SHIFT", "!", "!"), -- convert pane to window
+		map_tmux_key("CMD", "w", "x"), -- close pane
+		map_tmux_key("CMD|SHIFT", "w", "&"), -- close window
+		map_tmux_key("CMD|SHIFT", "r", "$"), -- rename session
+		map_tmux_key("CMD", "r", ","), -- rename window
+		map_tmux_key("CMD", "p", "s"), -- show all sessions
+		map_tmux_key("CMD", "d", "d"), -- detach from session
+		-- switch to window by number
+		map_tmux_key("CMD", "0", "0"),
+		map_tmux_key("CMD", "1", "1"),
+		map_tmux_key("CMD", "2", "2"),
+		map_tmux_key("CMD", "3", "3"),
+		map_tmux_key("CMD", "4", "4"),
+		map_tmux_key("CMD", "5", "5"),
+		map_tmux_key("CMD", "6", "6"),
+		map_tmux_key("CMD", "7", "8"),
+		map_tmux_key("CMD", "9", "9"),
 	},
-})
-
-return config
+}
 -- vim: set ts=2 sw=2:
